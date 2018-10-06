@@ -6,6 +6,24 @@
       "Exceptions": null,
       "SentToServer": true,
       "InstallationName": "YAROSLAV"
+    },
+    {
+      "Analyzer": "IEnumerableMultipleEvaluationsAnalyzer",
+      "OccurrenceCount": 1,
+      "Exceptions": {
+        "ArgumentException": "Синтаксический узел не находится в синтаксическом дереве.\r\n\r\nSource:\r\nstatic void Main(string[] args)\r\n{\r\n    try\r\n    {\r\n        _server = new ServerObject();\r\n        _listenThread = new Thread(new ThreadStart(_server.Listen));\r\n        _listenThread.Start();\r\n    }\r\n    catch (Exception ex)\r\n    {\r\n        _server.Disconnect();\r\n        Console.WriteLine(ex.Message);\r\n    }\r\n}"
+      },
+      "SentToServer": false,
+      "InstallationName": "YAROSLAV"
+    },
+    {
+      "Analyzer": "UseStringCollectionIntersectsAnalyzer",
+      "OccurrenceCount": 1,
+      "Exceptions": {
+        "ArgumentException": "Синтаксический узел не находится в синтаксическом дереве.\r\n\r\nSource:\r\nprivate string GetMessage()\r\n{\r\n    byte[] data = new byte[64];\r\n    StringBuilder builder = new StringBuilder();\r\n    int _bytes = 0;\r\n    do\r\n    {\r\n        _bytes = Stream.Read(data, 0, data.Length);\r\n        builder.Append(Encoding.Unicode.GetString(data, 0, _bytes));\r\n    }\r\n    while (Stream.DataAvailable);\r\n    return builder.ToString();\r\n}"
+      },
+      "SentToServer": false,
+      "InstallationName": "YAROSLAV"
     }
   ]
 }
