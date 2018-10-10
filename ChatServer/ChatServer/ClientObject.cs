@@ -28,7 +28,7 @@ namespace ChatServer
                 string message = GetMessage();
                 _userName = message;
 
-                message = _userName + "вошел в чат";
+                message = _userName + "Entered chat";
                 _server.BroadcastMessage(message, this.Id);
                 Console.WriteLine(message);
 
@@ -43,7 +43,7 @@ namespace ChatServer
                     }
                     catch
                     {
-                        message = String.Format("{0}: покинул чат", _userName);
+                        message = String.Format("{0}: left the chat", _userName);
                         Console.WriteLine(message);
                         _server.BroadcastMessage(message, this.Id);
                         break;
